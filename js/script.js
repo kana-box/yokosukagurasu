@@ -18,18 +18,18 @@ $(function(){
   });
 }());
 
-$(function(){
-  //よこすかぐらすマップ フェードイン
-$('#map').waypoint(function(){
-  if($('#map').css('visibility') == 'visible') {
-  }
-  else {
-    $('#map').css('visibility','visible');
-    $('#map').toggleClass('animated pulse');
-  }
-},{offset: '50%'}
-);
-});
+// $(function(){
+//   //よこすかぐらすマップ フェードイン
+// $('#map').waypoint(function(){
+//   if($('#map').css('visibility') == 'visible') {
+//   }
+//   else {
+//     $('#map').css('visibility','visible');
+//     $('#map').toggleClass('animated pulse');
+//   }
+// },{offset: '50%'}
+// );
+// });
 
 // $(function(){
 //   //VT フェードイン
