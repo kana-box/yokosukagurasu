@@ -1,0 +1,3915 @@
+/* ___________________
+
+全体設計
+_____________________*/
+
+body {
+  font-family: 'Sawarabi Mincho', sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  transition-property: all;
+  transition: 0.3s linear;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+.sp_only{
+  display: none;
+}
+
+
+
+/* ___________________
+
+header
+_____________________*/
+
+header {
+  width: 100%;
+  background-color: #fff0f0;
+  height: auto;
+}
+
+.headerinner {
+  width: 1040px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo_pc {
+  padding-top: 50px;
+  float: left;
+}
+
+.logo_sp {
+  display: none;
+}
+
+.headerinner nav {
+  float: right;
+  padding-top: 0px;
+}
+
+.headerinner nav ul {
+  display: flex; 
+}
+
+.headerinner nav ul li a {
+  margin-right: 20px;
+  display: block;
+  color: #ee152a;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.headerinner nav ul li a span {
+  display: block;
+  text-align: center;
+  color: #f86775;
+  font-size: 10px;
+}
+
+.gakuseigentei {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.mv_pc {
+  width: 100%;
+  display: block;
+}
+
+.mv_sp {
+  display: none;
+}
+
+.menu_list {
+  display: none;
+}
+
+/*----------------------------
+* レスポンシブ　ハンバーガーメニュー
+　メニュー開閉ボタン
+*----------------------------*/
+
+.menu-btn{
+  position: fixed;
+  top: 35px;
+  right: 30px;
+  z-index: 4;
+  width: 5px;
+  height: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu_icon {
+  width: 40px;
+}
+
+/*----------------------------
+* 　レスポンシブ　ハンバーガーメニュー
+　　メニュー本体
+*----------------------------*/
+
+.menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff0f0;
+}
+
+.menu__item a{
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  text-align: center;
+  color:#ee152a;
+	box-sizing: border-box;
+	text-decoration: none;
+	display: block;
+	position: relative;
+	font-size: 12px;
+	letter-spacing: 3px;
+}
+
+.menu__item a span {
+  display: block;
+  font-size: 10px;
+  color: #f86775;
+}
+
+/*----------------------------
+* レスポンシブ　ハンバーガーメニュー
+　アニメーション部分
+*----------------------------*/
+
+/* アニメーション前のメニューの状態 */
+.menu{
+  transform: translateX(100vw);
+  transition: all .3s linear;
+}
+/* アニメーション後のメニューの状態 */
+.menu.is-active{
+  transform: translateX(0);
+}
+
+
+/* ___________________
+
+よこすかぐらすでできること
+_____________________*/
+
+
+.menuinner {
+  display: flex;
+  justify-content: center;
+  margin: 200px auto 0 auto;
+}
+
+.menuleft {
+  margin-right: 70px;
+}
+
+.menuleft img {
+  width: 900px;
+}
+
+.menuright h3 {
+  font-size: 70px;
+  color: #f86775;
+}
+
+.menuright h3 span {
+  display: block;
+  margin-left: 400px;
+}
+
+.menuright h4 {
+  color: #333;
+  font-size: 20px;
+  margin-top: 60px;
+  margin-left: 50px;
+
+}
+
+.menulist_img {
+  display: flex;
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+
+.menulist_img img{
+  margin-right: 20px;
+}
+
+
+
+/* ___________________
+
+よこすかぐらすマップ
+_____________________*/
+
+#map {
+  visibility: hidden;
+}
+
+.mapinner {
+  width: 1040px;
+  margin: 0 auto;
+  margin-top: 200px;
+  position: relative;
+}
+
+.map_sp {
+  display: none;
+}
+
+.pin {
+  background: url(../images/pin.png) no-repeat no-repeat center;
+  background-size: contain;
+  padding-left: 530px;
+  font-size: 13px;
+}
+
+.pin1 {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+
+.pin2 {
+  position: absolute;
+  top: 450px;
+  left: 450px;
+}
+
+.pin3 {
+  position: absolute;
+  top: 550px;
+  left: 750px;
+}
+
+.pin4 {
+  position: absolute;
+  top: 600px;
+  left: 450px;
+}
+
+.pin5 {
+  position: absolute;
+  top: 690px;
+  left: 650px;
+}
+
+.pin6 {
+  position: absolute;
+  top: 690px;
+  left: 250px;
+}
+
+.pin7 {
+  position: absolute;
+  top: 810px;
+  left: 490px;
+}
+
+.pin8 {
+  position: absolute;
+  top: 870px;
+  left: 190px;
+}
+
+.mapinner h3 {
+  background: url(../images/pin.png) no-repeat no-repeat;
+  padding-left: 30px;
+  margin-bottom: 40px;
+}
+
+.pininner {
+  margin-top: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pin_txt {
+  font-size: 30px;
+  color: #f86775;
+}
+
+.pin_txt1 {
+  font-size: 30px;
+  color: #f86775;
+  margin-right: 150px;
+}
+
+.pin_txt2 {
+  font-size: 30px;
+  color: #f86775;
+}
+
+.pin_txt1 a:hover,
+.pin_txt2 a:hover {
+  display: block;
+  opacity: 0.7;
+}
+
+/* ___________________
+
+よこすかぐらすバーチャルツアー
+_____________________*/
+/* 
+#vt {
+  visibility: hidden;
+} */
+
+.vtinner {
+  width: 1040px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.vtinner img {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vtinner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.vtinner h2:after {
+  content: url(../images/vttxt.png);
+}
+
+.vtinner p {
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.vt_btn {
+  display: block;
+  width: 350px;
+  height: 65px;
+  background-color: #f5d4c1;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 5px;
+  color: #333;
+  margin: 40px auto 0 auto;
+}
+
+.vt_btn:hover {
+  background-color: #fa9053;
+  opacity: 10;
+}
+
+/* ___________________
+
+よこすかぐらすAR
+_____________________*/
+/* 
+#ar {
+  visibility: hidden;
+} */
+
+.arinner {
+  width: 1040px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.arinner img {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.arinner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  text-align: right;
+}
+
+.arinner h2::before {
+  content: url(../images/artext.png);
+}
+
+.arinner p {
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.vt_btn {
+  display: block;
+  width: 350px;
+  height: 65px;
+  background-color: #f5d4c1;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 5px;
+  color: #333;
+  margin: 40px auto 0 auto;
+}
+
+.vt_btn:hover {
+  background-color: #fa9053;
+  opacity: 10;
+}
+
+
+/* ___________________
+
+おすすめInfo
+_____________________*/
+
+
+.infoinner {
+  width: 1040px;
+  margin: 0 auto;
+  padding-top: 200px;
+  /* visibility: hidden; */
+}
+
+.infoinner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.infoinner h2::after {
+  content: url(../images/vttxt.png);
+}
+
+.infolistinner {
+  display: flex;
+  margin-top: 50px;
+
+}
+
+.infolist {
+  width: 260px;
+  height: 330px;
+  background-color: #fff1f2;
+  padding: 30px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.infolist2 {
+  width: 260px;
+  height: 330px;
+  background-color: #f0ffff;
+  padding: 30px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.infolist h3,
+.infolist2 h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.infolist p,
+.infolist2 p {
+  text-align: justify;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.link {
+  width: 100px;
+  height: 50px;
+  background-color: #bbfbfb;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  color: #3349a8;
+  margin-top: 10px;
+  position: relative;
+  margin-right: 5px;
+}
+
+.link::after {
+  content: url(../images/link.png);
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  left: 70px;
+}
+
+.link_st::after {
+  content: url(../images/link_st.png);
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  left: 70px;
+}
+
+.link_st {
+  width: 100px;
+  height: 50px;
+  background-color: #fea5ac;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  color: #bb333d;
+  position: relative;
+}
+
+.info_btn {
+  display: block;
+  width: 350px;
+  height: 65px;
+  background-color: #f5d4c1;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 5px;
+  color: #333;
+  margin: 40px auto 0 auto;
+}
+
+.info_btn:hover {
+  background-color: #fa9053;
+  opacity: 10;
+}
+
+
+/* ___________________
+
+観光案内リンク
+_____________________*/
+/* 
+#link {
+  visibility: hidden;
+} */
+
+.linkinner {
+  width: 1040px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.linkinner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+.linkinner h2::before {
+  content: url(../images/artext.png);
+}
+
+.linkinner img {
+  width: auto;
+  margin: 0 auto;
+  margin-right: 20px;
+  text-align: center;
+}
+
+/* ___________________
+
+footer 
+_____________________*/
+
+footer {
+  width: 100%;
+  background-color: #fff0f0;
+  height: auto;
+  margin-top: 200px;
+}
+
+.footerinner {
+  width: 1040px;
+  margin: 0 auto;
+  padding-top: 50px;
+  position: relative;
+}
+
+.footerlogo {
+  float: left;
+}
+
+.footerinner nav {
+  float: right;
+  padding-top: 20px;
+}
+
+.footerinner nav ul {
+  display: flex; 
+}
+
+.footerinner nav ul li a {
+  margin-right: 20px;
+  display: block;
+  color: #ee152a;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.footerinner nav ul li a span {
+  display: block;
+  text-align: center;
+  color: #f86775;
+  font-size: 10px;
+}
+
+.gakuseigentei_footer {
+  position: absolute;
+  top: 70px;
+  right: 0;
+}
+
+.policy {
+  text-align: right;
+  font-size: 12px;
+  color: #333;
+  display: block;
+  margin-top: 20px;
+}
+
+small {
+  text-align: center;
+  font-size: 12px;
+  display: block;
+  margin-top: 20px;
+}
+
+
+/* ___________________
+
+about.html header
+_____________________*/
+
+.about_mv {
+  width: 100%;
+  display: block;
+}
+
+
+/* ___________________
+
+about.html よこすかぐらすについて
+_____________________*/
+
+.aboutinner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  letter-spacing: 1px;
+}
+
+.about_logo {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.aboutlistinner {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+}
+
+.aboutlistinner img {
+  width: 320px;
+}
+
+.aboutlist {
+  width: 370px;
+  height: 370px;
+  border: 1px solid #ffafb7;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.about_ttl1 {
+  background-color: #ffafb7;
+  height: 135px;
+  line-height: 135px;
+  color: #fff;
+  font-size: 25px;
+  position: relative;
+  padding-left: 80px;
+}
+
+.about_ttl2 {
+  background-color: #ffafb7;
+  height: 135px;
+  line-height: 135px;
+  color: #fff;
+  font-size: 25px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.about_ttl3 {
+  background-color: #ffafb7;
+  height: 135px;
+  line-height: 135px;
+  color: #fff;
+  font-size: 25px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.about_ttl1::before {
+  content: url(../images/about_icon1.png);
+  position: absolute;
+  left: 35px;
+  bottom: -10px;
+}
+
+.about_ttl2::before {
+  content: url(../images/about_icon2.png);
+  position: absolute;
+  left: 50px;
+  bottom: -5px;
+}
+
+.about_ttl3::before {
+  content: url(../images/about_icon3.png);
+  position: absolute;
+  left: 50px;
+  bottom: -10px;
+}
+
+.aboutlist p {
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 10px;
+  text-align: justify;
+}
+
+/* ___________________
+
+about.html よこすかぐらすが目指すこと
+_____________________*/
+
+.goalinner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.goalinner h2 {
+  color: #f86775;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.goalinner p {
+  border: 1px solid #ffafb7;
+  padding: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* ___________________
+
+about.html よこすかぐらす運営母体
+_____________________*/
+
+.operationinner {
+  width: 1040px;
+  margin: 200px auto 0 auto; 
+  letter-spacing: 1.5px;
+}
+
+.operationinner h2 {
+  color: #f86775;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.operationlist {
+  border: 1px solid #ffafb7;
+  padding: 50px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.opleft {
+  padding: 50px;
+}
+
+.opleft h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ffafb7;
+  padding-bottom: 20px;
+}
+
+.opleft p {
+  font-size: 15px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.opright img {
+  width: 300px;
+}
+
+.opright2 {
+  padding: 50px;
+}
+
+.opright2 h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ffafb7;
+  padding-bottom: 20px;
+}
+
+.opright2 p {
+  font-size: 15px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.opleft2 img {
+  width: 300px;
+}
+
+/* ___________________
+
+map.html　よこすかぐらすマップ
+_____________________*/
+
+.mappage_inner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+  position: relative;
+}
+
+.pin_1 {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+
+
+.pin_2 {
+  position: absolute;
+  top: 450px;
+  left: 450px;
+}
+
+.pin_3 {
+  position: absolute;
+  top: 550px;
+  left: 750px;
+}
+
+.pin_4 {
+  position: absolute;
+  top: 600px;
+  left: 450px;
+}
+
+.pin_5 {
+  position: absolute;
+  top: 690px;
+  left: 650px;
+}
+
+.pin_6 {
+  position: absolute;
+  top: 690px;
+  left: 250px;
+}
+
+.pin_7 {
+  position: absolute;
+  top: 810px;
+  left: 490px;
+}
+
+.pin_8 {
+  position: absolute;
+  top: 870px;
+  left: 190px;
+}
+
+.mappage_pininner h3 {
+  background: url(../images/pin.png) no-repeat no-repeat;
+  padding-left: 30px;
+  margin-bottom: 40px;
+}
+
+.mappage_pininner {
+  margin-top: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pin_txt {
+  font-size: 30px;
+  color: #f86775;
+}
+
+.pin_txt1 {
+  font-size: 30px;
+  color: #f86775;
+  margin-right: 150px;
+}
+
+.pin_txt2 {
+  font-size: 30px;
+  color: #f86775;
+}
+
+.pin_txt1 a:hover,
+.pin_txt2 a:hover {
+  display: block;
+  opacity: 0.7;
+}
+
+/* ___________________
+
+map.html VT
+_____________________*/
+
+.vt_inner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.vt_inner img {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vt_inner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.vt_inner h2:after {
+  content: url(../images/vttxt.png);
+}
+
+.vt_inner p {
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.vtlistinner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.vtlist {
+  width: 400px;
+  height: auto;
+  border: 1px solid #f86775;
+  padding: 30px;
+  text-align: justify;
+}
+
+.vtlist img {
+  text-align: center;
+  display: block;
+  width: 400px;
+}
+
+.vtlist a::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  bottom: -25px;
+}
+
+.vtlist h3 span {
+  background-color: #f86775;
+  color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.vtlist h3 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.vtlist h4 {
+  font-size: 16px;
+  margin-top: 20px;
+  letter-spacing: 1.5px;
+}
+
+.vtlist_txt1 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 160px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 25px;
+}
+
+
+.vtlist_txt3 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 120px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 20px;
+}
+
+.vtlist_txt1::before {
+  content: url(../images/vticon_1.png);
+  position: absolute;
+  left: 90px;
+  bottom: -10px;
+}
+
+.vtlist_txt3::before {
+  content: url(../images/vticon_1.png);
+  position: absolute;
+  left: 60px;
+  bottom: -10px;
+}
+
+
+/* ___________________
+
+map.html AR
+_____________________*/
+
+.ar_inner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.ar_inner img {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ar_inner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.ar_inner h2:after {
+  content: url(../images/vttxt.png);
+}
+
+.ar_inner p {
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.arlistinner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.arlist {
+  width: 400px;
+  height: auto;
+  border: 1px solid #f86775;
+  padding: 30px;
+  text-align: justify;
+}
+
+.arlist img {
+  text-align: center;
+  display: block;
+  width: 400px;
+}
+
+.arlist a::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  bottom: -25px;
+}
+
+.arlist h3 span {
+  background-color: #f86775;
+  color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.arlist h3 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.arlist h4 {
+  font-size: 16px;
+  margin-top: 20px;
+  letter-spacing: 1.5px;
+}
+
+.arlist_txt1 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 160px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 25px;
+}
+
+
+.arlist_txt3 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 120px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 20px;
+}
+
+.arlist_txt1::before {
+  content: url(../images/ar_icon.png);
+  position: absolute;
+  left: 120px;
+  bottom: -10px;
+}
+
+.arlist_txt3::before {
+  content: url(../images/ar_icon.png);
+  position: absolute;
+  left: 80px;
+  bottom: -10px;
+}
+
+/* ___________________
+
+map_oppama_taura.html
+_____________________*/
+
+.mapunder_inner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.maplistinner {
+  border: 1px solid #f86775;
+  padding: 80px;
+}
+
+.maplistinner h2 {
+  font-size: 20px;
+  color: #f86775;
+}
+
+.maplistinner h2::before {
+  content: url(../images/pin.png);
+  padding-right: 5px;
+}
+
+.maplist {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.maplist p {
+  font-size: 16px;
+  color: #333;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.maplist p::after {
+  content: url(../images/pdficon.png);
+  position: absolute;
+  bottom: -5px;
+}
+
+.map_banner {
+  margin-right: 80px;
+}
+
+/* ___________________
+
+info.html
+_____________________*/
+
+.info_inner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.info_inner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.info_inner h2::after {
+  content: url(../images/vttxt.png);
+}
+
+.info_inner ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.info_inner ul li a {
+  margin-right: 50px;
+  color: #f9939d;
+  font-size: 30px;
+  display: block;
+}
+
+.info_inner ul li:last-child{
+  margin-right: 0px;
+}
+
+.info_inner ul li span {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  color: #f9d6d6;
+}
+
+.infolist_inner {
+  margin-top: 100px;
+}
+
+.infolist_inner h3 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.info_lists {
+  display: flex;
+  justify-content: center;
+}
+
+.info_list {
+  width: 260px;
+  height: 330px;
+  background-color: #fff1f2;
+  padding: 30px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.info_list2 {
+  width: 260px;
+  height: 330px;
+  background-color: #f0ffff;
+  padding: 30px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.info_list h4,
+.info_list2 h4 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.info_list p,
+.info_list2 p {
+  text-align: justify;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ___________________
+
+link.html
+_____________________*/
+
+.link_inner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.link_inner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.link_inner h2::after {
+  content: url(../images/vttxt.png);
+}
+
+.link_listinner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.link_list {
+  width: 360px;
+  margin-right: 20px;
+}
+
+.link_list img {
+  width: 360px;
+}
+
+.link_list h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link_list p {
+  text-align: justify;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+/* ___________________
+
+coupon.html
+_____________________*/
+
+.couponinner {
+  width: 1040px;
+  margin: 200px auto 0 auto;
+}
+
+.couponinner h2 {
+  font-size: 50px;
+  color: #f86775;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.couponinner h2::after {
+  content: url(../images/vttxt.png);
+}
+
+.couponinner h3 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  margin-bottom: 100px;
+}
+
+.couponlistinner {
+  border: 1px solid #f86775;
+  padding: 100px;
+  font-size: 14px;
+}
+
+.gender {
+  margin-right: 30px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.gender::before {
+  content: url(../images/couponimg.png);
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+}
+
+input[type=radio] {
+  border: 1px solid #f86775;
+}
+
+.woman {
+  margin-right: 20px;
+}
+
+.age {
+  margin-right: 30px;
+}
+
+.age::before {
+  content: url(../images/couponimg.png);
+}
+
+.ageinner {
+  margin-top: 30px;
+}
+
+.ages {
+  margin-right: 30px;
+}
+
+.homeinner {
+  margin-top: 30px;
+}
+
+.home {
+  margin-right: 30px;
+}
+
+.home::before {
+  content: url(../images/couponimg.png);
+}
+
+select {
+  border: 1px solid #f86775;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+}
+
+.likeinner {
+  margin-top: 30px;
+}
+
+.like {
+  margin-right: 30px;
+}
+
+.like::before {
+  content: url(../images/couponimg.png);
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.checkbtn {
+  text-align: center;
+  display: block;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  color: #333;
+  background-color: #fab8bf;
+  letter-spacing: 2px;
+  margin: 30px auto 0 auto;
+}
+
+/* ___________________
+
+レスポンシブ　スマホ
+_____________________*/
+
+@media (max-width: 375px) {
+
+.sp_only {
+  display: block;
+}
+
+.pc_only {
+  display: none;
+}
+
+
+/* ___________________
+
+header
+_____________________*/
+
+header {
+  width: 100%;
+  background-color: #fff;
+  height: auto;
+}
+
+.headerinner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo_pc {
+  display: none;
+  float: none;
+}
+
+.logo_sp {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.headerinner nav {
+  display: none;
+  float: none;
+}
+
+.gakuseigentei {
+  display: none;
+}
+
+.mv_pc {
+  display: none;
+}
+
+.mv_sp {
+  display: block;
+  width: 100%;
+}
+
+.menu_list {
+  display: block;
+}
+
+
+/* ___________________
+
+よこすかぐらすでできること
+_____________________*/
+
+
+.menuinner {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 100px auto 0 auto;
+}
+
+.menuleft img{
+  margin-right: 0px;
+  order: 2;
+}
+
+.menuleft img {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.menuright {
+  order: 1;
+}
+
+.menuright h3 {
+  font-size: 35px;
+  color: #f86775;
+  text-align: center;
+}
+
+.menuright h3 span {
+  display: block;
+  margin-left: 200px;
+}
+
+.menuright h4 {
+  color: #333;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-left: 0px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.menulist_img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-left: 0px;
+  text-align: center;
+}
+
+.menulist_img img{
+  width: 90%;
+  margin-right: 0px;
+}
+
+/* ___________________
+
+よこすかぐらすマップ
+_____________________*/
+
+.mapinner {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.map_pc {
+  display: none;
+}
+
+.map_sp {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.pin1 {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  width: 60px;
+  display: none;
+}
+
+.pin2 {
+  position: absolute;
+  top: 130px;
+  left: 140px;
+  width: 100px;
+  display: none;
+}
+
+.pin3 {
+  position: absolute;
+  top: 160px;
+  left: 210px;
+  width: 110px;
+  display: none;
+}
+
+.pin4 {
+  position: absolute;
+  top: 170px;
+  left: 130px;
+  width: 30px;
+  display: none;
+}
+
+.pin5 {
+  position: absolute;
+  top: 200px;
+  left: 190px;
+  width: 40px;
+  display: none;
+}
+
+.pin6 {
+  position: absolute;
+  top: 200px;
+  left: 70px;
+  width: 80px;
+  display: none;
+}
+
+.pin7 {
+  position: absolute;
+  top: 235px;
+  left: 140px;
+  width: 90px;
+  display: none;
+}
+
+.pin8 {
+  position: absolute;
+  top: 245px;
+  left: 60px;
+  width: 50px;
+  display: none;
+}
+
+.mapinner h3 {
+  background: url(../images/pin.png) no-repeat no-repeat;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  background-size: contain;
+}
+
+.pininner {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.pin_txt {
+  font-size: 10px;
+  color: #f86775;
+  padding-bottom: 10px;
+  display: block;
+}
+
+.pin_txt1 {
+  font-size: 16px;
+  color: #f86775;
+  margin-right: 30px;
+  margin-left: 0px;
+}
+
+.pin_txt2 {
+  font-size: 16px;
+  color: #f86775;
+}
+
+
+/* ___________________
+
+よこすかぐらすバーチャルツアー
+_____________________*/
+
+.vtinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.vtinner img {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.vtinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.vtinner h2:after {
+  content: url(../images/vttxt_sp.png);
+  display: inline-block;
+}
+
+.vtinner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.vt_btn {
+  display: block;
+  width: 240px;
+  height: 50px;
+  background-color: #f5d4c1;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  color: #333;
+  margin: 30px auto 0 auto;
+}
+
+.vt_btn:hover {
+  background-color: #fa9053;
+  opacity: 10;
+}
+
+/* ___________________
+
+よこすかぐらすAR
+_____________________*/
+
+.arinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.arinner img {
+  width: 90%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.arinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  text-align: right;
+}
+
+.arinner h2::before {
+  content: url(../images/artxt_sp.png);
+}
+
+.arinner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+/* ___________________
+
+おすすめInfo
+_____________________*/
+
+.infoinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.infoinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+.infoinner h2::after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.infolistinner {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.infolistinner img {
+  text-align: center;
+  width: 100%;
+}
+
+.infolist {
+  width: 70%;
+  height: auto;
+  background-color: #fff1f2;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.infolist2 {
+  width: 70%;
+  height: auto;
+  background-color: #f0ffff;
+  padding: 10px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.infolist h3,
+.infolist2 h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.infolist p,
+.infolist2 p {
+  text-align: justify;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.link {
+  width: 60px;
+  height: 50px;
+  background-color: #bbfbfb;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  color: #3349a8;
+  margin-top: 10px;
+  position: relative;
+  margin-right: 0;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.link::after {
+  content: url(../images/link.png);
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+}
+
+.link_st::after {
+  content: url(../images/link_st.png);
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+}
+
+.link_st {
+  width: 60px;
+  height: 50px;
+  background-color: #fea5ac;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  color: #bb333d;
+  position: relative;
+  font-size: 10px;
+}
+
+/* ___________________
+
+観光案内リンク
+_____________________*/
+
+.linkinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+  text-align: center;
+}
+
+.linkinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.linkinner h2::before {
+  content: url(../images/artxt_sp.png);
+}
+
+.linkinner img {
+  margin-right: 0px;
+  width: 80%;
+}
+
+.linklist {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ___________________
+
+footer 
+_____________________*/
+
+footer {
+  width: 100%;
+  background-color: #fff0f0;
+  height: 200px;
+  margin-top: 150px;
+}
+
+.footerinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50px;
+  position: relative;
+}
+
+.footerlogo {
+  float: none;
+  text-align: center;
+}
+
+.footerinner nav {
+  display: none;
+}
+
+.gakuseigentei_footer {
+  display: none;
+}
+
+.policy {
+  text-align: center;
+  font-size: 10px;
+  color: #333;
+  display: block;
+  margin-top: 20px;
+}
+
+small {
+  text-align: center;
+  font-size: 10px;
+  display: block;
+  margin-top: 20px;
+}
+
+/* ___________________
+
+about.html header
+_____________________*/
+
+.about_mvsp {
+  width: 100%;
+  margin-bottom: 100px;
+
+}
+
+/* ___________________
+
+about.html よこすかぐらすについて
+_____________________*/
+
+.aboutinner {
+  width: 100%;
+  margin: 200px auto 0 auto;
+  font-family: "Yu Gothic",'Sawarabi Gothic', sans-serif;
+  letter-spacing: 1px;
+}
+
+.about_logo {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.aboutlistinner {
+  display: block;
+  margin-top: 30px;
+}
+
+.aboutlistinner img {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.aboutlist {
+  margin: 0 auto 20px auto;
+  width: 80%;
+  border: 1px solid #ffafb7;
+  border-radius: 5px;
+}
+
+.about_ttl1 {
+  background-color: #ffafb7;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-left: 80px;
+}
+
+.about_ttl2 {
+  background-color: #ffafb7;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.about_ttl3 {
+  background-color: #ffafb7;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.about_ttl1::before {
+  content: url(../images/about_icon1.png);
+  position: absolute;
+  left: 35px;
+  bottom: -10px;
+}
+
+.about_ttl2::before {
+  content: url(../images/about_icon2.png);
+  position: absolute;
+  left: 50px;
+  bottom: -5px;
+}
+
+.about_ttl3::before {
+  content: url(../images/about_icon3.png);
+  position: absolute;
+  left: 50px;
+  bottom: -10px;
+}
+
+.aboutlist p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px;
+  text-align: justify;
+}
+
+/* ___________________
+
+about.html よこすかぐらすが目指すこと
+_____________________*/
+
+.goalinner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.goalinner h2 {
+  color: #f86775;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.goalinner p {
+  border: 1px solid #ffafb7;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* ___________________
+
+about.html よこすかぐらす運営母体
+_____________________*/
+
+.operationinner {
+  width: 90%;
+  margin: 80px auto 0 auto; 
+  letter-spacing: 1.5px;
+}
+
+.operationinner h2 {
+  color: #f86775;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.operationlist {
+  border: 1px solid #ffafb7;
+  padding: 20px;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.opleft {
+  padding: 20px;
+  order: 2;
+}
+
+.opleft h3 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ffafb7;
+  padding-bottom: 10px;
+}
+
+.opleft p {
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.opright img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+.opright2 {
+  padding: 20px;
+  order: 1;
+}
+
+.opright2 h3 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ffafb7;
+  padding-bottom: 10px;
+}
+
+.opright2 p {
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.opleft2 img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+
+}
+
+/* ___________________
+
+map.html VT
+_____________________*/
+
+.vt_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.vt_inner img {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.vt_inner h2 {
+  font-size: 18px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+.vt_inner h2:after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.vt_inner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.vtlistinner {
+  display: block;
+  margin-top: 20px;
+}
+
+.vtlist {
+  width: 80%;
+  height: auto;
+  border: 1px solid #f86775;
+  padding: 30px;
+  text-align: justify;
+  margin: 0 auto 20px auto; 
+}
+
+.vtlist img {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.vtlist a::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  bottom: -15px;
+}
+
+.vtlist h3 span {
+  background-color: #f86775;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 5px;
+  font-size: 10px;
+}
+
+.vtlist h3 {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.vtlist h4 {
+  font-size: 10px;
+  margin-top: 20px;
+  letter-spacing: 1.5px;
+}
+
+.vtlist_txt1 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 120px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 16px;
+}
+
+
+.vtlist_txt3 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 75px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 14px;
+}
+
+.vtlist_txt1::before {
+  content: url(../images/vticon_1.png);
+  position: absolute;
+  left: 60px;
+  bottom: -15px;
+}
+
+.vtlist_txt3::before {
+  content: url(../images/vticon_1.png);
+  position: absolute;
+  left: 20px;
+  bottom: -15px;
+}
+
+
+/* ___________________
+
+map_oppama_taura.html
+_____________________*/
+
+.mapunder_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.maplistinner {
+  border: 1px solid #f86775;
+  padding: 20px;
+}
+
+.maplistinner h2 {
+  font-size: 18px;
+  color: #f86775;
+  margin-bottom: 30px;
+}
+
+.maplistinner h2::before {
+  content: url(../images/pin.png);
+  padding-right: 5px;
+}
+
+.maplist {
+  display: block;
+  margin-top: 20px;
+}
+
+.maplist p {
+  font-size: 14px;
+  color: #333;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.maplist p::after {
+  content: url(../images/pdficon.png);
+  position: absolute;
+  bottom: -5px;
+}
+
+.map_banner {
+  margin-right: 0px;
+  width: 100%;
+  display: block;
+}
+
+.img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+}
+
+/* ___________________
+
+レスポンシブ　ipad
+_____________________*/
+
+@media (max-width: 1024px) {
+
+
+.sp_only {
+  display: block;
+}
+
+.pc_only {
+  display: none;
+}
+
+.menu_list {
+  display: block;
+}
+
+/* ___________________
+
+header
+_____________________*/
+
+header {
+  width: 100%;
+  background-color: #fff;
+  height: auto;
+}
+
+.headerinner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo_pc {
+  display: none;
+}
+
+.logo_sp {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.headerinner nav {
+  display: none;
+}
+
+.gakuseigentei {
+  display: none;
+}
+
+.mv_pc {
+  display: none;
+}
+
+.mv_sp {
+  display: block;
+  width: 100%;
+}
+
+.menu_list {
+  display: block;
+}
+
+
+/* ___________________
+
+よこすかぐらすでできること
+_____________________*/
+
+
+.menuinner {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 60px auto 0 auto;
+}
+
+.menuleft {
+  margin-right: 0px;
+  order: 2;
+}
+
+.menuleft img {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.menuright {
+  order: 1;
+}
+
+.menuright h3 {
+  font-size: 30px;
+  color: #f86775;
+  text-align: center;
+}
+
+.menuright h3 span {
+  display: block;
+  margin-left: 100px;
+}
+
+.menuright h4 {
+  color: #333;
+  font-size: 12px;
+  margin-top: 30px;
+  margin-left: 0px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.menulist_img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-left: 0px;
+  text-align: center;
+}
+
+.menulist_img img{
+  width: 90%;
+  margin-right: 0px;
+}
+
+/* ___________________
+
+よこすかぐらすマップ
+_____________________*/
+
+.mapinner {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.map_pc {
+  display: none;
+}
+
+.map_sp {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.pin1 {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  width: 60px;
+  display: none;
+}
+
+.pin2 {
+  position: absolute;
+  top: 130px;
+  left: 140px;
+  width: 100px;
+  display: none;
+}
+
+.pin3 {
+  position: absolute;
+  top: 160px;
+  left: 210px;
+  width: 110px;
+  display: none;
+}
+
+.pin4 {
+  position: absolute;
+  top: 170px;
+  left: 130px;
+  width: 30px;
+  display: none;
+}
+
+.pin5 {
+  position: absolute;
+  top: 200px;
+  left: 190px;
+  width: 40px;
+  display: none;
+}
+
+.pin6 {
+  position: absolute;
+  top: 200px;
+  left: 70px;
+  width: 80px;
+  display: none;
+}
+
+.pin7 {
+  position: absolute;
+  top: 235px;
+  left: 140px;
+  width: 90px;
+  display: none;
+}
+
+.pin8 {
+  position: absolute;
+  top: 245px;
+  left: 60px;
+  width: 50px;
+  display: none;
+}
+
+.mapinner h3 {
+  background: url(../images/pin.png) no-repeat no-repeat;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  background-size: contain;
+}
+
+.pininner {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.pin_txt {
+  font-size: 10px;
+  color: #f86775;
+  padding-bottom: 10px;
+  display: block;
+}
+
+.pin_txt1 {
+  font-size: 16px;
+  color: #f86775;
+  margin-right:   15px;
+  margin-left: 0px;
+}
+
+.pin_txt2 {
+  font-size: 16px;
+  color: #f86775;
+}
+
+/* ___________________
+
+よこすかぐらすバーチャルツアー
+_____________________*/
+
+.vtinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.vtinner img {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.vtinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.vtinner h2:after {
+  content: url(../images/vttxt_sp.png);
+  display: inline-block;
+}
+
+.vtinner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.vt_btn {
+  display: block;
+  width: 240px;
+  height: 50px;
+  background-color: #f5d4c1;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  color: #333;
+  margin: 30px auto 0 auto;
+}
+
+.vt_btn:hover {
+  background-color: #fa9053;
+  opacity: 10;
+}
+
+/* ___________________
+
+よこすかぐらすAR
+_____________________*/
+
+.arinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.arinner img {
+  width: 90%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.arinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  text-align: right;
+}
+
+.arinner h2::before {
+  content: url(../images/artxt_sp.png);
+}
+
+.arinner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+/* ___________________
+
+おすすめInfo
+_____________________*/
+
+.infoinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.infoinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+.infoinner h2::after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.infolistinner {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.infolistinner img {
+  text-align: center;
+  width: 100%;
+}
+
+.infolist {
+  width: 70%;
+  height: auto;
+  background-color: #fff1f2;
+  padding: 10px;
+  margin-right: 10px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.infolist2 {
+  width: 70%;
+  height: auto;
+  background-color: #f0ffff;
+  padding: 10px;
+  margin-right: 0px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.infolist h3,
+.infolist2 h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.infolist p,
+.infolist2 p {
+  text-align: justify;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.link {
+  width: 60px;
+  height: 40px;
+  background-color: #bbfbfb;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  color: #3349a8;
+  margin-top: 10px;
+  position: relative;
+  font-size: 10px;
+  margin: 10px 0 0 0;
+}
+
+.link::after {
+  content: url(../images/link.png);
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+}
+
+.link_st::after {
+  content: url(../images/link_st.png);
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+}
+
+.link_st {
+  width: 60px;
+  height: 40px;
+  background-color: #fea5ac;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  color: #bb333d;
+  position: relative;
+  font-size: 10px;
+}
+
+/* ___________________
+
+観光案内リンク
+_____________________*/
+
+.linkinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+  text-align: center;
+}
+
+.linkinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.linkinner h2::before {
+  content: url(../images/artxt_sp.png);
+}
+
+.linkinner img {
+  margin-right: 0px;
+  width: 50%;
+  float: left;
+}
+
+/* ___________________
+
+footer 
+_____________________*/
+
+footer {
+  width: 100%;
+  background-color: #fff0f0;
+  height: 200px;
+  margin-top: 150px;
+}
+
+.footerinner {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50px;
+  position: relative;
+}
+
+.footerlogo {
+  float: none;
+  text-align: center;
+}
+
+.footerinner nav {
+  display: none;
+}
+
+.gakuseigentei_footer {
+  display: none;
+}
+
+.policy {
+  text-align: center;
+  font-size: 10px;
+  color: #333;
+  display: block;
+  margin-top: 20px;
+}
+
+small {
+  text-align: center;
+  font-size: 10px;
+  display: block;
+  margin-top: 20px;
+}
+
+/* ___________________
+
+about.html header
+_____________________*/
+
+.about_mvsp {
+  width: 100%;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+/* ___________________
+
+about.html よこすかぐらすについて
+_____________________*/
+
+.aboutinner {
+  width: 90%;
+  margin: 50px auto 0 auto;
+  font-family: "Yu Gothic",'Sawarabi Gothic', sans-serif;
+  letter-spacing: 1px;
+}
+
+.about_logo {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.aboutlistinner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.aboutlistinner img {
+  width: 30%;
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.aboutlist {
+  margin: 0 auto 20px auto;
+  width: 80%;
+  border: 1px solid #ffafb7;
+  border-radius: 5px;
+}
+
+.about_ttl1 {
+  background-color: #ffafb7;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-left: 80px;
+}
+
+.about_ttl2 {
+  background-color: #ffafb7;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.about_ttl3 {
+  background-color: #ffafb7;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.about_ttl1::before {
+  content: url(../images/about_icon1.png);
+  position: absolute;
+  left: 35px;
+  bottom: -10px;
+}
+
+.about_ttl2::before {
+  content: url(../images/about_icon2.png);
+  position: absolute;
+  left: 50px;
+  bottom: -5px;
+}
+
+.about_ttl3::before {
+  content: url(../images/about_icon3.png);
+  position: absolute;
+  left: 50px;
+  bottom: -10px;
+}
+
+.aboutlist p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px;
+  text-align: justify;
+}
+
+/* ___________________
+
+about.html よこすかぐらすが目指すこと
+_____________________*/
+
+.goalinner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.goalinner h2 {
+  color: #f86775;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.goalinner p {
+  border: 1px solid #ffafb7;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* ___________________
+
+about.html よこすかぐらす運営母体
+_____________________*/
+
+.operationinner {
+  width: 90%;
+  margin: 80px auto 0 auto; 
+  letter-spacing: 1.5px;
+}
+
+.operationinner h2 {
+  color: #f86775;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.operationlist {
+  border: 1px solid #ffafb7;
+  padding: 20px;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.opleft {
+  padding: 20px;
+  order: 2;
+}
+
+.opleft h3 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ffafb7;
+  padding-bottom: 10px;
+}
+
+.opleft p {
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.opright img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+.opright2 {
+  padding: 20px;
+  order: 1;
+}
+
+.opright2 h3 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ffafb7;
+  padding-bottom: 10px;
+}
+
+.opright2 p {
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.opleft2 img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+
+}
+
+/* ___________________
+
+map.html　よこすかぐらすマップ
+_____________________*/
+
+.mappage_inner {
+  width: 90%;
+  margin: 50px auto 0 auto;
+  position: relative;
+  clear: both;
+}
+
+.mappage_mvsp {
+  width: 100%;
+}
+
+.pin_1 {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  display: none;
+}
+
+
+.pin_2 {
+  position: absolute;
+  top: 450px;
+  left: 450px;
+  display: none;
+}
+
+.pin_3 {
+  position: absolute;
+  top: 550px;
+  left: 750px;
+  display: none;
+}
+
+.pin_4 {
+  position: absolute;
+  top: 600px;
+  left: 450px;
+  display: none;
+}
+
+.pin_5 {
+  position: absolute;
+  top: 690px;
+  left: 650px;
+  display: none;
+}
+
+.pin_6 {
+  position: absolute;
+  top: 690px;
+  left: 250px;
+  display: none;
+}
+
+.pin_7 {
+  position: absolute;
+  top: 810px;
+  left: 490px;
+  display: none;
+}
+
+.pin_8 {
+  position: absolute;
+  top: 870px;
+  left: 190px;
+  display: none;
+}
+
+.mappage_pininner h3 {
+  background: url(../images/pin.png) no-repeat no-repeat;
+  background-size: contain;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.mappage_pininner {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.pin_txt {
+  font-size: 10px;
+  color: #f86775;
+}
+
+.pin_txt1 {
+  font-size: 10px;
+  color: #f86775;
+  margin-right: 10px;
+}
+
+.pin_txt2 {
+  font-size: 10px;
+  color: #f86775;
+}
+
+.pin_txt1 a:hover,
+.pin_txt2 a:hover {
+  display: block;
+  opacity: 0.7;
+}
+
+
+/* ___________________
+
+map.html VT
+_____________________*/
+
+.vt_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.vt_inner img {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.vt_inner h2 {
+  font-size: 18px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+.vt_inner h2:after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.vt_inner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.vtlistinner {
+  display: block;
+  margin-top: 20px;
+}
+
+.vtlist {
+  width: 80%;
+  height: auto;
+  border: 1px solid #f86775;
+  padding: 30px;
+  text-align: justify;
+  margin: 0 auto 20px auto; 
+}
+
+.vtlist img {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.vtlist a::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  bottom: -15px;
+}
+
+.vtlist h3 span {
+  background-color: #f86775;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 5px;
+  font-size: 10px;
+}
+
+.vtlist h3 {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.vtlist h4 {
+  font-size: 10px;
+  margin-top: 20px;
+  letter-spacing: 1.5px;
+}
+
+.vtlist_txt1 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 120px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 16px;
+}
+
+
+.vtlist_txt3 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 75px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 14px;
+}
+
+.vtlist_txt1::before {
+  content: url(../images/vticon_1.png);
+  position: absolute;
+  left: 60px;
+  bottom: -15px;
+}
+
+.vtlist_txt3::before {
+  content: url(../images/vticon_1.png);
+  position: absolute;
+  left: 20px;
+  bottom: -15px;
+}
+
+
+/* ___________________
+
+map.html AR
+_____________________*/
+
+.ar_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.ar_inner img {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ar_inner h2 {
+  font-size: 18px;
+  color: #f86775;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  text-align: right;
+}
+
+.ar_inner h2::before {
+  content: url(../images/artxt_sp.png);
+}
+
+.ar_inner h2::after {
+  display: none;
+}
+
+.ar_inner p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.arlistinner {
+  display: block;
+  margin-top: 20px;
+}
+
+.arlist {
+  width: 80%;
+  height: auto;
+  border: 1px solid #f86775;
+  padding: 30px;
+  text-align: justify;
+  margin: 0 auto 20px auto; 
+}
+
+.arlist img {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.arlist a::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  bottom: -15px;
+}
+
+.arlist h3 span {
+  background-color: #f86775;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 5px;
+  font-size: 10px;
+}
+
+.arlist h3 {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.arlist h4 {
+  font-size: 10px;
+  margin-top: 20px;
+  letter-spacing: 1.5px;
+}
+
+.arlist_txt1 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 120px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 16px;
+}
+
+
+.arlist_txt3 {
+  background-color: #ffeff1;
+  color: #f86775;
+  width: auto;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 75px;
+  display: block;
+  margin-top: 20px;
+  position: relative;
+  font-size: 14px;
+}
+
+.arlist_txt1::before {
+  content: url(../images/ar_icon.png);
+  position: absolute;
+  left: 80px;
+  bottom: -20px;
+}
+
+.arlist_txt3::before {
+  content: url(../images/ar_icon.png);
+  position: absolute;
+  left: 40px;
+  bottom: -20px;
+}
+
+
+/* ___________________
+
+map_oppama_taura.html
+_____________________*/
+
+.mapunder_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.maplistinner {
+  border: 1px solid #f86775;
+  padding: 20px;
+}
+
+.maplistinner h2 {
+  font-size: 18px;
+  color: #f86775;
+  margin-bottom: 30px;
+}
+
+.maplistinner h2::before {
+  content: url(../images/pin.png);
+  padding-right: 5px;
+}
+
+.maplist {
+  display: block;
+  margin-top: 20px;
+}
+
+.maplist p {
+  font-size: 14px;
+  color: #333;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.maplist p::after {
+  content: url(../images/pdficon.png);
+  position: absolute;
+  bottom: -5px;
+}
+
+.map_banner {
+  margin-right: 0px;
+  width: 100%;
+  display: block;
+}
+
+.img {
+  width: 200px;
+  text-align: left;
+}
+
+/* ___________________
+
+info.html
+_____________________*/
+
+.info_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.info_inner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.info_inner h2::after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.info_inner ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.info_inner ul li a {
+  margin-right: 20px;
+  color: #f9939d;
+  font-size: 12px;
+  display: block;
+}
+
+.info_inner ul li a:nth-last-child(0){
+  margin-right: 0px;
+}
+
+.info_inner ul li span {
+  display: block;
+  font-size: 10px;
+  text-align: center;
+  color: #f9d6d6;
+}
+
+.infolist_inner {
+  display: block;
+  text-align: center;
+  width: auto;
+  margin: 50px auto 0 auto;
+}
+
+.infoimg {
+  width: 30%;
+  display: block;
+  text-align: center;
+  margin: 80px auto 10px auto;
+}
+
+
+
+.info_lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+.infoimg2 {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.info_list {
+  text-align: center;
+  margin: 0 auto 30px auto;
+  width: 70%;
+  height: auto;
+  background-color: #fff1f2;
+  padding: 10px;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.info_list2 {
+  width: 70%;
+  height: auto;
+  background-color: #f0ffff;
+  padding: 10px;
+  margin: 0 auto 30px auto;
+  box-shadow: 2px 2px 4px  rgba(0,0,0,0.5);
+}
+
+.info_list h4,
+.info_list2 h4 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.info_list p,
+.info_list2 p {
+  text-align: justify;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+
+/* ___________________
+
+link.html
+_____________________*/
+
+.link_inner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.link_inner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.link_inner h2::after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.link_listinner {
+  display: block;
+  margin-top: 50px;
+}
+
+.link_list {
+  width: 100%;
+  margin-right: 0px;
+  margin-bottom: 30px;
+}
+
+.link_list img {
+  width: 100%;
+}
+
+.link_list h3 {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.link_list p {
+  text-align: justify;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ___________________
+
+coupon.html
+_____________________*/
+
+.couponinner {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.couponinner h2 {
+  font-size: 20px;
+  color: #f86775;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.couponinner h2::after {
+  content: url(../images/vttxt_sp.png);
+}
+
+.couponinner h3 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 10px;
+  margin-bottom: 50px;
+}
+
+.couponlistinner {
+  border: 1px solid #f86775;
+  padding: 20px;
+  font-size: 10px;
+}
+
+.genderinner {
+  display: flex;
+}
+
+.gender {
+  margin-right: 10px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.gender::before {
+  content: url(../images/couponimg_sp.png);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+input[type=radio] {
+  border: 1px solid #f86775;
+}
+
+.woman {
+  margin-right: 20px;
+}
+
+.age {
+  margin-right: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.age::before {
+  content: url(../images/couponimg_sp.png);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.ageinner {
+  margin-top: 30px;
+}
+
+.ages {
+  margin-right: 0px;
+}
+
+.homeinner {
+  margin-top: 30px;
+}
+
+.home {
+  margin-right: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.home::before {
+  content: url(../images/couponimg_sp.png);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+}
+
+select {
+  border: 1px solid #f86775;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+}
+
+.likeinner {
+  margin-top: 30px;
+}
+
+.like {
+  margin-right: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.like::before {
+  content: url(../images/couponimg_sp.png);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.checkbox {
+  margin-right: 5px;
+}
+
+.checkbtn {
+  text-align: center;
+  display: block;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  color: #333;
+  background-color: #fab8bf;
+  letter-spacing: 2px;
+  margin: 10px auto 0 auto;
+}
+
+}
